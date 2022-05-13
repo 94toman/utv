@@ -5,7 +5,7 @@ import Porady from './pages/Porady';
 import Epizody from './pages/Epizody'
 import Naladit from './pages/Naladit';
 import ErrorPage from './pages/ErrorPage';
-import './App.css';
+import './App.scss';
 import Footer from './components/Footer';
 import MenuTop from './components/MenuTop';
 
@@ -46,14 +46,9 @@ const dbPorady = {
 function App() {
   return (
     <div className="App">
-      <MenuTop />
-      <h1>Plzeň TV</h1>
       <Router>
-        <nav>
-          <Link to='/'> Home </Link>
-          <Link to='/porady'> Pořady </Link>
-          <Link to='naladit'> Jak naladit </Link>
-        </nav>
+        <MenuTop />
+        <h1>Plzeň TV</h1>
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/porady/' element={<Porady dbPorady={dbPorady}/>}/>

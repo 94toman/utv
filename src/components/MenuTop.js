@@ -1,12 +1,13 @@
 import React from 'react';
-import './MenuTop.css'
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import './MenuTop.scss'
 
 const MenuTop = () => {
 
     return (
-        <div className='navBar'>
+        <nav className='navBar'>
             <div className="navigation">
-                <a href="/">Menu 1</a>
+                <Link to='/'> Home </Link>
                 <div class="navigation-content">
                     <a href="/">Link 1</a>
                     <a href="/">Link 2</a>
@@ -14,7 +15,7 @@ const MenuTop = () => {
                 </div>
             </div>
             <div className="navigation">
-                <a href="/">Menu 2</a>
+                <Link to='/porady'> Pořady </Link>
                 <div class="navigation-content">
                     <a href="/">Link 1</a>
                     <a href="/">Link 2</a>
@@ -22,9 +23,9 @@ const MenuTop = () => {
                 </div>
             </div>
             <div className="navigation">
-                <a href="/">Single Menu</a>
+                <Link to='naladit'> Jak naladit </Link>
             </div>
-        </div>
+        </nav>
     )
 };
 
