@@ -1,12 +1,14 @@
 .navBar {
     background: linear-gradient(to right, rgb(88, 254, 88), rgb(128, 255, 253));
-}
+    display: grid;
 
-.navigation {
+    #utv_logo {
+      max-height: 50px;
+    }
+
+  .navigation {
     position: relative;
     display: inline-block;
-
-    
   }
 
   .navigation-content {
@@ -35,3 +37,6 @@
   .navigation:hover .navigation-content {
     display: block;
   }
+}
+
+

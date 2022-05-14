@@ -8,6 +8,7 @@ import ErrorPage from './pages/ErrorPage';
 import './App.scss';
 import Footer from './components/Footer';
 import MenuTop from './components/MenuTop';
+import { programmes, videos } from './components/db.js';
 
 
 // RSC -> stateless component skeleton
@@ -17,31 +18,6 @@ import MenuTop from './components/MenuTop';
 // https://youtu.be/UjHT_NKR_gU?t=494
 // https://reactrouter.com/docs/en/v6/getting-started/tutorial
 
-const dbPorady = {
-  "result": "success",
-  "type": "programmes",
-  "count": "35",
-  "programmes": [
-      {
-          "id": "39",
-          "lastchange": "1560326393",
-          "status": "current",
-          "title": "100 let na jihu Čech",
-          "lead": "Ve čtyřech dílech Vás provedeme sto letou historií ji\u017en\u00edch \u010cech",
-          "description": "",
-          "logo": "https://www.zaktv.cz/orez-270-152/porady/88.jpg"
-      },
-      {
-          "id": "58",
-          "lastchange": "1622623487",
-          "status": "current",
-          "title": "Divadelní magazín",
-          "lead": "Lorem ipsum",
-          "description": "",
-          "logo": "https://www.zaktv.cz/orez-270-152/porady/77.jpg"
-      }
-  ]
-}
 
 function App() {
   return (
@@ -51,7 +27,7 @@ function App() {
         <h1>Plzeň TV</h1>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/porady/' element={<Porady dbPorady={dbPorady}/>}/>
+          <Route path='/porady/' element={<Porady dbPorady={programmes}/>}/>
           <Route path='/porady/:poradId' element={<Epizody />}/>
           <Route path='/naladit' element={<Naladit />}/>
           <Route path='*' element={<ErrorPage />}/>

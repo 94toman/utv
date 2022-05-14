@@ -12,7 +12,7 @@ const Porady = ({dbPorady}) => {
                 Go HOME 
             </button>
 
-            <CardList programmes={dbPorady.programmes} />
+            <CardList db={dbPorady.programmes} />
         </div>
     );
 };

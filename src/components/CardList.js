@@ -1,18 +1,21 @@
 import React from 'react';
 import Card from './Card.js';
 
-const CardList = ({ programmes }) => {
+const CardList = ({ db }) => {
   return (
     <div>
       {
-        programmes.map((porad, i) => {
+        db.map((porad, i) => {
           return (
             <Card
               key = {i}
-              title={programmes[i].title}
-              lead={programmes[i].lead}
-              logo={programmes[i].logo}
-              poradId={programmes[i].id}
+              title={porad.title}
+              programmetitle={porad.programmetitle}
+              lead={porad.lead}
+              description={porad.description}
+              logo={porad.logo}
+              poster={porad.poster}
+              poradId={porad.id}
               />
           );
         })

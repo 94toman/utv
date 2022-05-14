@@ -1,7 +1,11 @@
 .card {
     width: 300px;
 
+    h2 {
+        min-height: 60px;
+    }
+
     p {
-        height: 50px;
+        min-height: 40px;
     }
 }
