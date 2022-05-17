@@ -2,7 +2,8 @@ import React from 'react'; // { useState, useEffect }
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './pages/Home';
 import Porady from './pages/Porady';
-import Epizody from './pages/Epizody'
+import Epizody from './pages/Epizody';
+import Epizoda from './pages/Epizoda';
 import Naladit from './pages/Naladit';
 import ErrorPage from './pages/ErrorPage';
 import './App.scss';
@@ -27,8 +28,10 @@ function App() {
         <h1>Plzeň TV</h1>
         <Routes>
           <Route path='/' element={<Home />}/>
+          <Route path='/utv/' element={<Home />}/>
           <Route path='/porady/' element={<Porady dbPorady={programmes}/>}/>
-          <Route path='/porady/:poradId' element={<Epizody />}/>
+          <Route path='/porady/:poradURL' element={<Epizody/>}/>
+          <Route path='/porady/:poradURL/:epizodaURL' element={<Epizoda />}/>
           <Route path='/naladit' element={<Naladit />}/>
           <Route path='*' element={<ErrorPage />}/>
         </Routes>     

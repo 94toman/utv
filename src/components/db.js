@@ -29,7 +29,7 @@ export const programmes = {
             "lead": "Lorem ipsum",
             "description": "",
             "logo": "https://data.jihoceskatelevize.cz/porady/2.jpg?1504326120"
-        }
+        },
     ]
   }
 
@@ -90,6 +90,34 @@ export const videos = {
         "url": "https://vysilani.r-cast.cz/jtv/2533/video.m3u8",
         "poster": "https://data.jihoceskatelevize.cz/porady/2.jpg?1504326120",
         "postermini": "https://data.r-cast.cz/epizody/2533-640.jpg"
+      },
+      {
+        "id": "2503",
+        "lastchange": "1572536285",
+        "status": "visible",
+        "title": "Jeden z dílů tohohle pořadu",
+        "datetime": "1572476400",
+        "programme": "1",
+        "programmetitle": "100 let na jihu Čech",
+        "description": "Epizoda ze série 100 let na jihu Čech ",
+        "duration": "314",
+        "url": "https://vysilani.r-cast.cz/jtv/2533/video.m3u8",
+        "poster": "https://data.jihoceskatelevize.cz/porady/39.jpg?1525434360",
+        "postermini": "https://data.r-cast.cz/epizody/2533-640.jpg"
+      },
+      {
+        "id": "2503",
+        "lastchange": "1572436285",
+        "status": "visible",
+        "title": "Jeden z dílů tohohle pořadu",
+        "datetime": "1572474400",
+        "programme": "1",
+        "programmetitle": "Divadelní magazín",
+        "description": "Další epizoda Lorem ipsum",
+        "duration": "318",
+        "url": "https://vysilani.r-cast.cz/jtv/2533/video.m3u8",
+        "poster": "https://data.jihoceskatelevize.cz/porady/39.jpg?1525434360",
+        "postermini": "https://data.r-cast.cz/epizody/2533-640.jpg"
       }
     ]
   }
@@ -107,7 +135,7 @@ export const videos = {
       "programme": "1",
       "description": "<p>V sobotu dopoledne odstartovala letošní plavební sezóna, v Českých Budějovicích se slavnostně otevřelo nové vývaziště.</p> <p>Na Lipně už mohou malí i velcí návštěvníci vyrazit do oblíbeného Království lesa. </p><p>Fotbaloví trenéři z partnerských klubů se sešli na jihu Čech, aby se dozvěděli novinky z fotbalových příprav jednotlivců i týmů.</p>",
       "duration": "656",
-      "url": "https://vysilani.r-cast.cz/jtv/4249/video.m3u8",
+      "url": "https://www.ceskatelevize.cz/_next/static/media/ivysilani_meta_logo.8373b3b4.jpg",
       "poster": "https://data.r-cast.cz/epizody/4249.jpg",
       "postermini": "https://data.r-cast.cz/epizody/4249-640.jpg"
     }

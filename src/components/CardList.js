@@ -16,6 +16,7 @@ const CardList = ({ db }) => {
               logo={porad.logo}
               poster={porad.poster}
               poradId={porad.id}
+              duration={porad.duration}
               />
           );
         })
