@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './pages/Home';
 import Porady from './pages/Porady';
 import Epizody from './pages/Epizody';
-import Epizoda from './pages/Epizoda';
+import Epizoda from './pages/Epizoda.jsx';
 import Naladit from './pages/Naladit';
 import ErrorPage from './pages/ErrorPage';
 import './App.scss';
