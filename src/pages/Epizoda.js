@@ -9,10 +9,12 @@ const Epizoda = () => {
     let navigate = useNavigate();
     let { poradURL, epizodaURL } = useParams();
 
-    const currentVideo = videosArray.filter(video => {
+    let currentVideo = videosArray.filter(video => {
         return ((video.programmetitle.toLowerCase() === poradURL.toLowerCase()) 
         && (video.title.toLowerCase() === epizodaURL.toLowerCase()));
     })
+
+    let epizoda = currentVideo[0];
 
     console.log(currentVideo[0]);
     
@@ -24,10 +26,9 @@ const Epizoda = () => {
                 onClick={() => {navigate(-1);}}> 
                 Go BACK 
             </button>
-            <h2>This is Epizoda</h2>
-            <h2>URL Title: {epizodaURL}</h2>
-            <h2>Object title: {title}</h2>
-            <p>Object description: {description}</p>
+            <h2>Pořad {epizoda.programmetitle}</h2>
+            <h2>Epizoda: {epizoda.title}</h2>
+            <p>{epizoda.description}</p>
             <img alt='vysilani' src={url}/>
             
         </div>
