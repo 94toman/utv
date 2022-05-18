@@ -5,10 +5,11 @@ import Porady from './pages/Porady';
 import Epizody from './pages/Epizody';
 import Epizoda from './pages/Epizoda.jsx';
 import Naladit from './pages/Naladit';
+import Kontakt from './pages/Kontakt';
 import ErrorPage from './pages/ErrorPage';
 import './App.scss';
 import Footer from './components/Footer';
-import MenuTop from './components/MenuTop';
+import NavBar from './components/NavBar';
 import { programmes, videos } from './components/db.js';
 
 
@@ -24,8 +25,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <MenuTop />
-        <h1>Plzeň TV</h1>
+        <NavBar />
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/utv/' element={<Home />}/>
@@ -33,6 +33,7 @@ function App() {
           <Route path='/porady/:poradURL' element={<Epizody/>}/>
           <Route path='/porady/:poradURL/:epizodaURL' element={<Epizoda />}/>
           <Route path='/naladit' element={<Naladit />}/>
+          <Route path='/kontakt' element={<Kontakt />}/>
           <Route path='*' element={<ErrorPage />}/>
         </Routes>     
       </Router>

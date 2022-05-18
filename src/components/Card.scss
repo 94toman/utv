@@ -1,13 +1,57 @@
 .card {
-    width: 300px;
+    width: 450px;
+    color: white;
     cursor: pointer;
+    box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 20%);
+    margin: 0.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: inline-block;
+    backface-visibility: hidden;
+    transform: translateZ( 0 );
+    transition: all 2s linear;
 
-    h2 {
-        min-height: 60px;
+    .card_img {
+        position: relative;
+        img {
+            width: 100%;
+            margin-bottom: -3px;
+        }
     }
+    .card_text {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
 
-    p {
-        height: 55px;
-        overflow: hidden;
+        h2 {
+            margin: 10px;
+        }
+
+        p {
+            display: none;
+            padding: 0 10px;
+        }        
+    }
+    :hover * + .card_text p {
+        display: block;
+        animation: fade_in_show 0.3s;
     }
 }
+
+@keyframes fade_in_show {
+    0% {
+         opacity: 0;
+         transform: scale(0)
+    }
+
+    100% {
+         opacity: 1;
+         transform: scale(1)
+    }
+}
+
+
+
+/*     transition: transform .25s ease-out;
+ */

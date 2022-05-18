@@ -6,41 +6,28 @@ const Card = ({title, lead, description, logo, poradId, poster, duration}) => {
   let navigate = useNavigate();
   let { poradURL } = useParams();
   return (
-    <div className='card tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
+    <div className='card'>
       {
         (!duration)   // rozdělení odkazů karet na seznam Epizod nebo konkrétní Epizodu.
         ? <div onClick={() => {navigate(`/porady/${title}`);}}>
-                      <h2>{title}</h2>
-            {
-              (lead)
-              ? <p>{lead}</p>
-              : <p>{description}</p>
-            }
-            
-            {
-              (logo)
-              ? <img src={logo} alt='porad_logo'></img>
-              : <img src={poster} alt='epizoda_poster'></img>
-            }        
+            <div className='card_img'>
+              <img src={logo} alt='porad_logo'></img>
+            </div>
+            <div className='card_text'>
+              <h2>{title}</h2>
+              <p>{lead}</p>
+            </div>
           </div>
-
-
-
 
             // Konkrétní epizody
         : <div onClick={() => {navigate(`/porady/${poradURL}/${title}`);}}>
-                      <h2>{title}</h2>
-            {
-              (lead)
-              ? <p>{lead}</p>
-              : <p>{description}</p>
-            }
-            
-            {
-              (logo)
-              ? <img src={logo} alt='porad_logo'></img>
-              : <img src={poster} alt='epizoda_poster'></img>
-            }        
+            <div className='card_img'>
+              <img src={poster} alt='epizoda_poster'></img>      
+            </div>
+            <div className='card_text'>
+              <h2>{title}</h2>
+              <p>{description}</p>
+            </div>
           </div>
 
       }
@@ -49,3 +36,6 @@ const Card = ({title, lead, description, logo, poradId, poster, duration}) => {
 }
 
 export default Card;
+
+
+//               
