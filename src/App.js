@@ -24,19 +24,21 @@ import { programmes, videos } from './components/db.js';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/utv/' element={<Home />}/>
-          <Route path='/porady/' element={<Porady dbPorady={programmes}/>}/>
-          <Route path='/porady/:poradURL' element={<Epizody/>}/>
-          <Route path='/porady/:poradURL/:epizodaURL' element={<Epizoda />}/>
-          <Route path='/naladit' element={<Naladit />}/>
-          <Route path='/kontakt' element={<Kontakt />}/>
-          <Route path='*' element={<ErrorPage />}/>
-        </Routes>     
-      </Router>
+      <div className='allButFooter'>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/utv/' element={<Home />}/>
+            <Route path='/porady/' element={<Porady dbPorady={programmes}/>}/>
+            <Route path='/porady/:poradURL' element={<Epizody/>}/>
+            <Route path='/porady/:poradURL/:epizodaURL' element={<Epizoda />}/>
+            <Route path='/naladit' element={<Naladit />}/>
+            <Route path='/kontakt' element={<Kontakt />}/>
+            <Route path='*' element={<ErrorPage />}/>
+          </Routes>     
+        </Router>
+      </div>
       <Footer />
     </div>
 

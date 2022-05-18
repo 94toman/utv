@@ -26,13 +26,15 @@ const Epizoda = () => {
     return (
         <div className='w-60 center'>
 
+            
+            <h2>Pořad {epizoda.programmetitle}</h2>
             <button 
                 onClick={() => {navigate(-1);}}> 
                 Go BACK 
             </button>
-            <h2>Pořad {epizoda.programmetitle}</h2>
             <h2>Epizoda: {epizoda.title}</h2>
             <p>{epizoda.description}</p>
+            
 
 
             <Player
