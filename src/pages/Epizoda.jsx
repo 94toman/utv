@@ -9,7 +9,7 @@ import './Epizoda.scss'
 //https://www.npmjs.com/package/vime
 //https://www.npmjs.com/package/@vime/core
 
-
+// https://rcastweb.docs.apiary.io/
 
 
 const Epizoda = () => {
@@ -23,6 +23,18 @@ const Epizoda = () => {
     })
     let epizoda = currentVideo[0];
 
+    fetch('https://private-anon-a937c432f2-rcastweb.apiary-mock.com/videos.json')
+    .then(resp => resp.json())
+    .then(data => {
+        let fetchedData = data.videos;
+        let fetchedVideo = fetchedData.filter(video => {
+            return ((video.programmetitle.toLowerCase() === poradURL.toLowerCase()) 
+            && (video.title.toLowerCase() === epizodaURL.toLowerCase()));
+        })
+        console.log(fetchedVideo[0].title);
+        console.log(fetchedVideo[0].description);
+    })
+
     return (
         <div className='w-60 center'>
 
@@ -33,6 +45,7 @@ const Epizoda = () => {
                 Go BACK 
             </button>
             <h2>Epizoda: {epizoda.title}</h2>
+            
             <p>{epizoda.description}</p>
             
 

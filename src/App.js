@@ -12,6 +12,10 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import { programmes, videos } from './components/db.js';
 
+fetch('https://private-anon-a937c432f2-rcastweb.apiary-mock.com/videos.json')
+    .then(resp => resp.json())
+    .then(console.log())
+
 
 // RSC -> stateless component skeleton
 // RCC -> 	class component skeleton
