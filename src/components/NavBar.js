@@ -7,7 +7,7 @@ const NavBar = () => {
 
     return (
         <nav className='navBar'>
-            <div className='container'>
+            <div className='navContainer'>
                 <div className='navBar-logo-wrapper'>
                     <NavLink to='/'>
                         <img id='utv_logo' alt='UTV_logo' src={logo}/>
