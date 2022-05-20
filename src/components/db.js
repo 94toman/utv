@@ -4,6 +4,15 @@ export const programmes = {
     "count": "35",
     "programmes": [
         {
+            "id": "1",
+            "lastchange": "1622123487",
+            "status": "current",
+            "title": "Čtyři tlapky",
+            "lead": "Lorem ipsum",
+            "description": "",
+            "logo": "https://data.jihoceskatelevize.cz/porady/2.jpg?1504326120"
+        },
+        {
             "id": "39",
             "lastchange": "1560326393",
             "status": "current",
@@ -20,16 +29,7 @@ export const programmes = {
             "lead": "Lorem ipsum",
             "description": "",
             "logo": "https://www.zaktv.cz/orez-270-152/porady/77.jpg"
-        },
-        {
-            "id": "1",
-            "lastchange": "1622123487",
-            "status": "current",
-            "title": "Čtyři tlapky",
-            "lead": "Lorem ipsum",
-            "description": "",
-            "logo": "https://data.jihoceskatelevize.cz/porady/2.jpg?1504326120"
-        },
+        }
     ]
   }
 
