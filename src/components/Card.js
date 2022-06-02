@@ -9,18 +9,19 @@ const Card = ({title, lead, description, logo, poradId, poster, duration}) => {
     <div className='card'>
       {
         (!duration)   // rozdělení odkazů karet na seznam Epizod nebo konkrétní Epizodu.
-        ? <div onClick={() => {navigate(`/porady/${title}`);}}>
+        ? <div onClick={() => {navigate(`/porady/${poradId}`);}}>
             <div className='card_img'>
               <img src={logo} alt='porad_logo'></img>
             </div>
             <div className='card_text'>
               <h2>{title}</h2>
+              <p>{poradId}</p>
               <p>{lead}</p>
             </div>
           </div>
 
             // Konkrétní epizody
-        : <div onClick={() => {navigate(`/porady/${poradURL}/${title}`);}}>
+        : <div onClick={() => {navigate(`/porady/${poradId}/${title}`);}}>
             <div className='card_img'>
               <img src={poster} alt='epizoda_poster'></img>      
             </div>

@@ -1,4 +1,4 @@
-import React from 'react'; // { useState, useEffect }
+import React, { useState, useEffect }  from 'react'; // { useState, useEffect }
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './pages/Home';
 import Porady from './pages/Porady';
@@ -10,11 +10,9 @@ import ErrorPage from './pages/ErrorPage';
 import './App.scss';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-import { programmes, videos } from './components/db.js';
+import { programmesDefault, videos } from './components/db.js';
 
-fetch('https://private-anon-a937c432f2-rcastweb.apiary-mock.com/videos.json')
-    .then(resp => resp.json())
-    .then(console.log())
+
 
 
 // RSC -> stateless component skeleton
@@ -26,15 +24,31 @@ fetch('https://private-anon-a937c432f2-rcastweb.apiary-mock.com/videos.json')
 
 
 function App() {
+
+  const [poradyDb, setPoradyDb] = useState({
+    programmes: programmesDefault.programmes
+})
+
+
+useEffect(() => {
+  fetch('https://data.zaktv.cz/programmes.json')
+  .then(resp => resp.json())
+  .then(data => {
+      console.log('porady = ', data);
+      setPoradyDb(data);
+  })
+},[]) 
+
+
   return (
     <div className="App">
       <div className='allButFooter'>
         <Router>
           <NavBar />
           <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/utv/' element={<Home />}/>
-            <Route path='/porady/' element={<Porady dbPorady={programmes}/>}/>
+            <Route path='/' element={<Home dbDefault={poradyDb.programmes}/>}/>
+            <Route path='/utv/' element={<Home dbDefault={poradyDb.programmes}/>}/>
+            <Route path='/porady/' element={<Porady dbDefault={poradyDb.programmes}/>}/>
             <Route path='/porady/:poradURL' element={<Epizody/>}/>
             <Route path='/porady/:poradURL/:epizodaURL' element={<Epizoda />}/>
             <Route path='/naladit' element={<Naladit />}/>

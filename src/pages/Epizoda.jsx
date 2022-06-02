@@ -31,7 +31,7 @@ const Epizoda = () => {
 */
 
     useEffect(() => {
-        fetch('https://private-anon-a937c432f2-rcastweb.apiary-mock.com/videos.json')
+        fetch('https://data.zaktv.cz/videos.json')
         .then(resp => resp.json())
         .then(data => {
             let fetchedData = data.videos;

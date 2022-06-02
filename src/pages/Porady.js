@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CardList from '../components/CardList';
+import { video } from '../components/db';
 
-const Porady = ({dbPorady}) => {
+
+
+const Porady = ({dbDefault}) => {
     let navigate = useNavigate();
+
     return (
         <div>
             <h2>This is Pořady page</h2>
@@ -12,7 +16,11 @@ const Porady = ({dbPorady}) => {
                 Go HOME 
             </button>
 
-            <CardList db={dbPorady.programmes} />
+            <CardList db={
+                dbDefault.filter(porad => {
+                    return porad.logo
+                })
+             } />
         </div>
     );
 };
