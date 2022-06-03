@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card.js';
 
-const CardList = ({ db }) => {
+const CardList = ({ db, poradURL }) => {
   return (
     <div>
       {
@@ -15,8 +15,9 @@ const CardList = ({ db }) => {
               description={porad.description}
               logo={porad.logo}
               poster={porad.poster}
-              poradId={porad.id}
+              id={porad.id}
               duration={porad.duration}
+              poradURL={poradURL}
               />
           );
         })

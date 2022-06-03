@@ -13,7 +13,7 @@ import './Epizoda.scss'
 
 const Epizoda = () => {
     let navigate = useNavigate();
-    let { poradURL, epizodaURL } = useParams();
+    let { poradURL, epizodaURL, id } = useParams();
     const [epizodaState, setEpizodaState] = useState({
         programmetitle: poradURL,
         title: epizodaURL,
@@ -30,10 +30,12 @@ const Epizoda = () => {
     let epizoda = currentVideo[0];
 */
 
+/*
     useEffect(() => {
         fetch('https://data.zaktv.cz/videos.json')
         .then(resp => resp.json())
         .then(data => {
+            console.log('epizoda ' + data);
             let fetchedData = data.videos;
             let fetchedVideo = fetchedData.filter(video => {
                 return ((video.programmetitle.toLowerCase() === poradURL.toLowerCase()) 
@@ -44,6 +46,16 @@ const Epizoda = () => {
             } else {
                 setEpizodaState(fetchedVideo[0]);
             }
+        })
+    },[]) */
+
+    // stažení dat o epizodě ze Serveru a vložení do State
+    useEffect(() => {
+        fetch(`https://data.zaktv.cz/videos/${id}.json`)
+        .then(resp => resp.json())
+        .then(data => {
+            setEpizodaState(data.video);
+
         })
     },[]) 
     
@@ -67,9 +79,7 @@ const Epizoda = () => {
             </button>
 
             <h2>Epizoda: {epizodaState.title}</h2>
-            
-            
-
+   
             {
                 (epizodaState.duration)
                 ? <div>
@@ -80,10 +90,10 @@ const Epizoda = () => {
                     >
                         <Hls
                             crossOrigin
-                            poster="https://www.zaktv.cz/epizody/6861.jpg"
+                            poster={`https://zaktv.cz/epizody/${id}.jpg`}
                         >
                             <source 
-                                data-src="https://vysilani.zaktv.cz/zak/6861/video.m3u8" 
+                                data-src={`https://vysilani.zaktv.cz/zak/${id}/video.m3u8`}
                                 type="application/x-mpegURL" 
                             />
                         </Hls>

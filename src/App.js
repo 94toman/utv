@@ -10,7 +10,7 @@ import ErrorPage from './pages/ErrorPage';
 import './App.scss';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-import { programmesDefault, videos } from './components/db.js';
+import { dbDefault } from './components/db.js';
 
 
 
@@ -26,7 +26,7 @@ import { programmesDefault, videos } from './components/db.js';
 function App() {
 
   const [poradyDb, setPoradyDb] = useState({
-    programmes: programmesDefault.programmes
+    programmes: dbDefault.programmes
 })
 
 
@@ -49,8 +49,8 @@ useEffect(() => {
             <Route path='/' element={<Home dbDefault={poradyDb.programmes}/>}/>
             <Route path='/utv/' element={<Home dbDefault={poradyDb.programmes}/>}/>
             <Route path='/porady/' element={<Porady dbDefault={poradyDb.programmes}/>}/>
-            <Route path='/porady/:poradURL' element={<Epizody/>}/>
-            <Route path='/porady/:poradURL/:epizodaURL' element={<Epizoda />}/>
+            <Route path='/porad/:poradURL/:id' element={<Epizody/>}/>
+            <Route path='/porad/:poradURL/epizoda/:epizodaURL/:id' element={<Epizoda />}/>
             <Route path='/naladit' element={<Naladit />}/>
             <Route path='/kontakt' element={<Kontakt />}/>
             <Route path='*' element={<ErrorPage />}/>
