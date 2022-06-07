@@ -9,9 +9,10 @@ const Epizody = () => {
     let navigate = useNavigate();
     let { poradURL, id } = useParams();
     const [epizodyDb, setEpizodyDb] = useState({
-        videos: videosArray
+        videos: videosArray   // default state - loading
     })
 
+    // fetching Episodes data and updating the state
     useEffect(() => {
         fetch(`https://data.zaktv.cz//videos.json?programme=${id}`)
         .then(resp => resp.json())

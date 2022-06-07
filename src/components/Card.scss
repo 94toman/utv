@@ -15,10 +15,8 @@
     .card_img {
         position: relative;
         img {
-            
             height: 100%;
             margin-bottom: -3px;
-
         }
     }
     .card_text {
@@ -33,7 +31,7 @@
         p {
             display: none;
             padding: 0 10px;
-            max-height: 100px;
+            max-height: 96px;
         }        
     }
     :hover * + .card_text p {
@@ -52,8 +50,3 @@
          transform: scale(1)
     }
 }
-
-
-
-/*     transition: transform .25s ease-out;
- */

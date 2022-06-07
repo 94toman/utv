@@ -14,23 +14,21 @@ import './Epizoda.scss'
 const Epizoda = () => {
     let navigate = useNavigate();
     let { poradURL, epizodaURL, id } = useParams();
-    const [epizodaState, setEpizodaState] = useState({
+    const [epizodaState, setEpizodaState] = useState({      //default state - loading
         programmetitle: poradURL,
         title: epizodaURL,
         description: 'NAČÍTÁM EPIZODU!'
     });
     console.log('loguju state: ', epizodaState);
 
-    /*
+    /* former fetching from test db
     let videosArray = videos.videos;
     let currentVideo = videosArray.filter(video => {
         return ((video.programmetitle.toLowerCase() === poradURL.toLowerCase()) 
         && (video.title.toLowerCase() === epizodaURL.toLowerCase()));
     })
     let epizoda = currentVideo[0];
-*/
 
-/*
     useEffect(() => {
         fetch('https://data.zaktv.cz/videos.json')
         .then(resp => resp.json())
@@ -49,7 +47,7 @@ const Epizoda = () => {
         })
     },[]) */
 
-    // stažení dat o epizodě ze Serveru a vložení do State
+    // Fetching data from server and updating the state
     useEffect(() => {
         fetch(`https://data.zaktv.cz/videos/${id}.json`)
         .then(resp => resp.json())
@@ -59,8 +57,8 @@ const Epizoda = () => {
         })
     },[]) 
     
-
-    // Vlastní funkce na konverzi HTML do textu -> když bych nechtěl použít NPM package
+    /*
+    // Custom function for converting HTML to text -> if I don't want to use NPM package htmlToFormattedText
     const convertToPlain = (html) => {
         // Create a new div element
         let tempDivElement = document.createElement("div");
@@ -68,11 +66,11 @@ const Epizoda = () => {
         tempDivElement.innerHTML = html;
         // Retrieve the text property of the element 
         return tempDivElement.textContent || tempDivElement.innerText || "";
-    }  
+    }  */
 
     return (
         <div className='container center'>
-            <h2>Pořad: {epizodaState.programmetitle}</h2>
+            <h2>Pořad: {poradURL}</h2>
             <button 
                 onClick={() => {navigate(-1);}}> 
                 Go BACK 
